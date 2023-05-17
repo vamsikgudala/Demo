@@ -1,18 +1,21 @@
-import './App.css';
-import Hello from './components/hello';
-import Hi from './components/hi';
-import World from './components/world';
+import React, { useEffect } from 'react'
 
 function App() {
+
+  useEffect ( 
+              ()=>{
+                fetch('https://jsonplaceholder.typicode.com/todos/1')
+                .then( resp => resp.json())
+                .then( data => console.log(data))
+              }, 
+              [] )
+
   return (
     <div>
-      
-      <Hello />
-      <Hi />
-      <World />
-      
+      Hello Fetch
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
